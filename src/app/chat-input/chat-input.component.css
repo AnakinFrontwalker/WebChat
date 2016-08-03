@@ -1,0 +1,11 @@
+.mdl-textfield__input:focus {
+    outline: none;
+}
+
+.chatinput-row {
+    display: flex;
+}
+
+.settings {
+    margin: 3px;
+}

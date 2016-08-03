@@ -1,0 +1,16 @@
+<div id="confirmationModal" class="dialog-container">
+    <div class="mdl-card mdl-shadow--16dp" @myAnimation="'visible'">
+        <div class="mdl-card__title">
+            <h2 class="mdl-card__title-text">Ustawienia</h2>
+        </div>
+        <div class="mdl-card__supporting-text">
+            Kolor tekstu:
+            <div class="colorpicker">
+                <div *ngFor="let c of colors" [class.selected]="chatService.color==c" [style.background-color]="c" (click)="setColor(c)"></div>
+            </div>
+        </div>
+        <div class="mdl-card__actions dialog-button-bar">
+            <button class="mdl-button mdl-button--accent mdl-button--raised mdl-js-button mdl-js-ripple-effect" id="okButton" (click)="closeWindow()">Ok</button>
+        </div>
+    </div>
+</div>

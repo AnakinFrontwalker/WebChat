@@ -1,0 +1,10 @@
+.my-list {
+    padding:0;
+    margin:0;
+}
+.my-list li {
+    color: lightblue;
+}
+.my-list .mdl-list__item-primary-content .mdl-list__item-sub-title {
+    color: #617f8f !important;
+}

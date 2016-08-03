@@ -1,0 +1,6 @@
+<div mdl class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+    <guestlist class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50"></guestlist>
+    <chat-view class="mdl-layout__content" scroll-glue></chat-view>
+    <chatinput class="demo-header mdl-layout__header mdl-color--blue-grey-800 mdl-color-text--grey-600" (openSettings)="openSettings($event)"></chatinput>
+    <settings-window *ngIf="settingsWindow" (openSettings)="openSettings($event)"></settings-window>
+</div>

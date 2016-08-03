@@ -1,0 +1,5 @@
+<div *ngFor="let message of messages">
+    <time>[{{message[0] | date:'H:mm:ss'}}]</time>
+    <span *ngIf="message[1]=='**'" [innerHTML]="message[2]"></span>
+    <span *ngIf="message[1]!='**'"><nickname>{{message[1]}}</nickname>: <span [style.color]="message[2][1]">{{message[2][0]}}</span></span>
+</div>

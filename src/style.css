@@ -1,0 +1,23 @@
+﻿body, app-root {
+        height:100%
+}
+
+.text--centered {
+    text-align: center;
+}
+
+.text--small {
+    font-size: 12px;
+}
+
+.cs-padding--10 {
+    padding: 10px;
+}
+
+.cs-padding--20 {
+    padding: 20px;
+}
+
+.cs-padding--30 {
+    padding: 30px;
+}

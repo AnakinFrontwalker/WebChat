@@ -1,0 +1,38 @@
+<div mdl class="mdl-layout mdl-js-layout mdl-color--grey-100">
+    <main class="mdl-layout__content">
+        <form (ngSubmit)="onSubmit()" #loginForm="ngForm" >
+            <div class="mdl-card mdl-shadow--6dp">
+                <div class="mdl-card__title mdl-color--primary mdl-color-text--white">
+                    <h2 class="mdl-card__title-text">{{title}}</h2>
+                </div>
+
+                <div *ngIf="action=='login'">
+                    <div class="mdl-card__supporting-text text--centered">
+                        <div *ngIf="status!='connected'">
+                            <span class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" (click)="onLoginClick()">LOGOWANIE Facebook</span>
+                            <p class="text--small">Nie publikujemy na Twoim profilu.</p>
+                        </div>
+                        <div *ngIf="status=='connected'">
+                            <img *ngIf="picture" class="user-image" src="{{picture}}" />
+                            <div id="nntf" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-focused" [class.is-dirty]="nickname">
+                                <label class="mdl-textfield__label" for="nickname">Nick</label>
+                                <input class="mdl-textfield__input" type="text" id="nickname" [(ngModel)]="nickname" name="nickname" #nicknameField required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mdl-card__actions" *ngIf="status=='connected'">
+
+                        <button *ngIf="status=='connected'" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" [disabled]="!loginForm.form.valid">Wejdź</button>
+                        <span *ngIf="status=='connected'" class="mdl-button mdl-js-button mdl-js-ripple-effect button-logout" (click)="onLogoutClick()">Wyloguj</span>
+                    </div>
+                </div>
+
+                <div class="mdl-card__actions mdl-card--border text--centered cs-padding--30 text--small" *ngIf="action=='connecting'">
+                    <div class="mdl-spinner mdl-js-spinner is-active"></div>
+                    <div class="cs-padding--10">łączę...</div>
+                </div>
+
+            </div>
+        </form>
+    </main>
+</div>
